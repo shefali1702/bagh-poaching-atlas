@@ -1,0 +1,1 @@
+{"feature_order": ["dist_to_boundary_km", "fragmentation_index", "dist_to_border_km", "reserve_pressure", "dist_to_road_km", "target_species_records_10km", "dist_to_ranger_km", "dist_to_town_km", "species_records_10km", "slope_deg", "dist_to_water_km", "land_cover", "has_rhino", "season", "elevation_m", "forest_cover", "has_elephant", "ndvi", "has_tiger"]}

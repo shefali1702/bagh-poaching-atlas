@@ -1,0 +1,55 @@
+name,state,lat,lon,area_km2,species,elev_m,landscape
+Corbett,Uttarakhand,29.55,78.85,1288,TE,650,Shivalik-Terai
+Rajaji,Uttarakhand,30.05,78.15,1075,TE,600,Shivalik-Terai
+Dudhwa,Uttar Pradesh,28.50,80.65,2201,TER,160,Shivalik-Terai
+Pilibhit,Uttar Pradesh,28.70,80.10,730,T,180,Shivalik-Terai
+Valmiki,Bihar,27.35,84.10,899,T,250,Shivalik-Terai
+Ranthambhore,Rajasthan,26.02,76.50,1411,T,350,Central India
+Sariska,Rajasthan,27.33,76.40,1213,T,450,Central India
+Mukundra Hills,Rajasthan,24.90,75.85,759,T,350,Central India
+Kanha,Madhya Pradesh,22.33,80.60,2052,T,700,Central India
+Pench (MP),Madhya Pradesh,21.80,79.35,1180,T,500,Central India
+Bandhavgarh,Madhya Pradesh,23.70,81.00,1537,T,600,Central India
+Panna,Madhya Pradesh,24.65,80.00,1598,T,400,Central India
+Satpura,Madhya Pradesh,22.50,78.20,2133,T,700,Central India
+Sanjay-Dubri,Madhya Pradesh,24.10,81.90,1675,T,450,Central India
+Tadoba-Andhari,Maharashtra,20.25,79.35,1728,T,250,Central India
+Pench (MH),Maharashtra,21.55,79.15,741,T,450,Central India
+Melghat,Maharashtra,21.45,77.20,2769,T,750,Central India
+Nawegaon-Nagzira,Maharashtra,21.10,80.10,1895,T,350,Central India
+Sahyadri,Maharashtra,17.40,73.75,1166,T,800,Western Ghats
+Bor,Maharashtra,21.05,78.60,816,T,350,Central India
+Indravati,Chhattisgarh,19.00,80.80,2799,T,400,Central India
+Achanakmar,Chhattisgarh,22.50,81.75,914,T,600,Central India
+Udanti-Sitanadi,Chhattisgarh,20.10,82.30,1872,T,500,Central India
+Palamau,Jharkhand,23.70,84.20,1130,TE,500,Central India
+Similipal,Odisha,21.80,86.30,2750,TE,600,Eastern Ghats
+Satkosia,Odisha,20.60,84.85,964,TE,300,Eastern Ghats
+Sundarbans,West Bengal,21.95,88.85,2585,T,3,Sundarbans
+Buxa,West Bengal,26.65,89.55,758,TE,250,North-East
+Jaldapara,West Bengal,26.65,89.30,216,ER,80,North-East
+Gorumara,West Bengal,26.72,88.80,80,ER,100,North-East
+Manas,Assam,26.72,90.95,3151,TER,150,North-East
+Kaziranga,Assam,26.65,93.35,1174,TER,70,North-East
+Orang,Assam,26.55,92.30,492,TER,80,North-East
+Pobitora,Assam,26.23,92.05,49,R,55,North-East
+Nameri,Assam,26.95,92.85,344,TE,150,North-East
+Pakke,Arunachal Pradesh,27.05,92.90,1198,TE,600,North-East
+Namdapha,Arunachal Pradesh,27.50,96.40,2053,TE,1200,North-East
+Kamlang,Arunachal Pradesh,27.95,96.55,783,TE,1100,North-East
+Dampa,Mizoram,23.70,92.40,988,T,700,North-East
+Nagarjunasagar-Srisailam,Andhra Pradesh,16.10,78.90,3728,T,500,Eastern Ghats
+Amrabad,Telangana,16.45,78.55,2611,T,550,Eastern Ghats
+Kawal,Telangana,19.20,79.00,2016,T,400,Eastern Ghats
+Bandipur,Karnataka,11.75,76.55,1456,TE,850,Western Ghats
+Nagarahole,Karnataka,12.05,76.15,1206,TE,850,Western Ghats
+BRT,Karnataka,11.95,77.15,575,TE,1000,Western Ghats
+Bhadra,Karnataka,13.60,75.65,1064,TE,900,Western Ghats
+Kali (Dandeli-Anshi),Karnataka,15.10,74.50,1097,TE,550,Western Ghats
+Mudumalai,Tamil Nadu,11.52,76.55,688,TE,900,Western Ghats
+Anamalai,Tamil Nadu,10.40,77.00,1480,TE,1000,Western Ghats
+Sathyamangalam,Tamil Nadu,11.60,77.30,1408,TE,800,Western Ghats
+Kalakad-Mundanthurai,Tamil Nadu,8.60,77.35,1602,TE,900,Western Ghats
+Srivilliputhur-Megamalai,Tamil Nadu,9.60,77.45,1017,TE,1000,Western Ghats
+Periyar,Kerala,9.50,77.15,925,TE,1100,Western Ghats
+Parambikulam,Kerala,10.45,76.75,644,TE,800,Western Ghats
