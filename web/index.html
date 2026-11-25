@@ -27,6 +27,9 @@ h2{font-size:clamp(44px,6vw,92px)}
 h3{font-size:clamp(24px,2.2vw,32px)}
 p{margin:0 0 12px}
 a{color:inherit}
+.src{background:linear-gradient(transparent 55%,rgba(241,155,76,.55) 55%);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px;font-weight:700;color:inherit;padding:0 2px;transition:background .25s}
+.src:hover{background:rgba(241,155,76,.7)}
+.src::after{content:" \2197";font-size:.8em}
 button,input,select{font:inherit}
 .num{font-variant-numeric:tabular-nums lining-nums}
 .muted{color:var(--muted)}
@@ -252,7 +255,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;m
     <div class="s2" id="s2">
       <div class="tag">THE THREAT BALLET</div>
       <h2>Everything a tiger faces.</h2>
-      <p class="note">Each object stands for a signal the model reads from public maps and sightings. The number is how many risk points it adds, on average, to a square kilometre.</p>
+      <p class="note">Each object stands for a signal the model reads from <a class="src" href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/" target="_blank" rel="noopener">public maps</a> and <a class="src" href="https://www.gbif.org" target="_blank" rel="noopener">sightings</a>. The number is how many risk points it adds, on average, to a square kilometre.</p>
     </div>
     <div class="s3" id="s3">
       <div class="no">03</div>
@@ -338,7 +341,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;m
   <div class="wrap">
     <div class="head">
       <div><div class="eyebrow">Section 06 · The others</div><h2>Three animals, one map.</h2></div>
-      <p class="lede">Share of each animal's habitat the model marks high risk in the dry season, with real sightings from GBIF that tell it where they live.</p>
+      <p class="lede">Share of each animal's habitat the model marks high risk in the dry season, with <a class="src" href="https://www.gbif.org/occurrence/search?country=IN" target="_blank" rel="noopener">real sightings from GBIF</a> that tell it where they live.</p>
     </div>
     <div class="trio" id="trio"></div>
     <div class="units" id="units"></div>
@@ -371,7 +374,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;m
   <div class="wrap">
     <div class="head">
       <div><div class="eyebrow">Section 08 · The weights</div><h2 id="dhead">What pushes a square into the red.</h2></div>
-      <p class="lede">TreeSHAP on the XGBoost threat-score model. Solid bars come from real public data, dashed bars from simulated placeholders.</p>
+      <p class="lede">TreeSHAP on the XGBoost threat-score model. Solid bars come from <a class="src" href="#fine">real public data</a>, dashed bars from simulated placeholders.</p>
     </div>
     <div class="cards2">
       <div id="shap"></div>
@@ -384,7 +387,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;m
   <div class="wrap">
     <div class="head">
       <div><div class="eyebrow">Section 09 · The fine print</div><h2>What is real, and what is not yet.</h2></div>
-      <p class="lede" style="color:#cdb8a8">Exact poaching coordinates are confidential, so every square gets a documented proxy score. The table says which layers are real public data and which are placeholders.</p>
+      <p class="lede" style="color:#cdb8a8">Exact poaching coordinates are confidential, so every square gets a documented proxy score. The table says which layers are <a class="src" href="https://www.naturalearthdata.com" target="_blank" rel="noopener">real public data</a> and which are placeholders.</p>
     </div>
     <div class="prov">
       <div class="scroll"><table id="prov" style="color:var(--cream)"></table></div>
@@ -393,7 +396,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;m
         <ul class="lim" style="color:#e6d6c6">
           <li>Labels are proxies, not verified poaching incidents.</li>
           <li>Reserve shapes are approximate footprints at each reserve's official area.</li>
-          <li>Natural Earth has only major roads and rivers.</li>
+          <li><a class="src" href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth</a> has only major roads and rivers.</li>
           <li>Elevation, NDVI, forest cover, fragmentation, ranger posts and past pressure are simulated until real rasters and NTCA or MIKE figures are added.</li>
           <li>It ranks where to look first. Deployment stays with forest officers.</li>
         </ul>
@@ -409,7 +412,7 @@ uvicorn api.main:app --port 8000</pre>
 
 <footer>
   <p class="mark">BAGH</p>
-  <div class="row"><span>Endangered Species Poaching Risk Predictor · Shefali Sharma</span><span>Data: Natural Earth, GBIF · proxy labels</span></div>
+  <div class="row"><span>Endangered Species Poaching Risk Predictor · Shefali Sharma</span><span>Data: <a class="src" href="https://www.naturalearthdata.com" target="_blank" rel="noopener">Natural Earth</a>, <a class="src" href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>, <a class="src" href="https://ntca.gov.in/tiger-reserves/" target="_blank" rel="noopener">NTCA</a> · proxy labels</span></div>
   <div class="row" style="margin-top:12px;font-size:12px;opacity:.7"><span>Animal and object images generated with Canva and Figma AI for this project.</span></div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -782,9 +785,9 @@ function species() {
 /* ---------- provenance ---------- */
 function provenance() {
   const rows = [
-    ['Roads, towns, rivers, lakes, borders', 'Natural Earth 1:10m', 'Real'],
-    ['Species sightings', 'GBIF occurrence API', 'Real'],
-    ['Reserve list, centres, official areas', 'NTCA / state forest departments (approximate)', 'Real, rounded'],
+    ['Roads, towns, rivers, lakes, borders', '<a class="src" href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth 1:10m</a>', 'Real'],
+    ['Species sightings', '<a class="src" href="https://www.gbif.org/developer/occurrence" target="_blank" rel="noopener">GBIF occurrence API</a>', 'Real'],
+    ['Reserve list, centres, official areas', '<a class="src" href="https://ntca.gov.in/tiger-reserves/" target="_blank" rel="noopener">NTCA</a> / state forest departments (approximate)', 'Real, rounded'],
     ['Reserve shapes', 'Generated footprint at official area', 'Approximate'],
     ['Elevation, slope', 'Placeholder for SRTM DEM', 'Simulated'],
     ['NDVI, forest cover, fragmentation', 'Placeholder for MODIS / ESA WorldCover / Hansen', 'Simulated'],
@@ -923,7 +926,7 @@ function trio() {
   const sp = k => { const rs = A.reserves.filter(r => r.species.includes(k)), c = rs.reduce((a, r) => a + r.cells, 0); return { n: rs.length, c, h: Math.round(rs.reduce((a, r) => a + r.cells * r.high_pct.dry, 0) / c) }; };
   const rows = [['T', 'Bengal tiger', 'tiger_walk', 'tiger'], ['E', 'Asian elephant', 'elephant2', 'elephant'], ['R', 'One-horned rhino', 'rhino_g', 'rhino']];
   $('#trio').innerHTML = rows.map(([k, nm, img, gk]) => { const s = sp(k);
-    return `<article class="sp rv"><div class="img"><img src="img/${img}.webp" alt="${nm}"></div><div class="nm">${nm}</div><b class="big num">${s.h}%</b><span class="muted">of its habitat is high risk</span><span class="muted" style="font-size:13px;margin-top:8px">${s.n} reserves · ${fmt(s.c)} km² · ${fmt(g[gk] || 0)} GBIF sightings</span></article>`; }).join('');
+    return `<article class="sp rv"><div class="img"><img src="img/${img}.webp" alt="${nm}"></div><div class="nm">${nm}</div><b class="big num">${s.h}%</b><span class="muted">of its habitat is high risk</span><span class="muted" style="font-size:13px;margin-top:8px">${s.n} reserves · ${fmt(s.c)} km² · <a class="src" href="https://www.gbif.org/occurrence/search?country=IN" target="_blank" rel="noopener">${fmt(g[gk] || 0)} GBIF sightings</a></span></article>`; }).join('');
 }
 /* ---------- reveals ---------- */
 function reveals() {
