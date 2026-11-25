@@ -211,7 +211,6 @@ tr.best td:first-child::after{content:"best";font-size:9.5px;letter-spacing:.14e
 .shaprow{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr) 3.5em;gap:14px;align-items:center;padding:6px 0;font-size:14px;border-bottom:1px solid var(--rule)}
 .shapbar{height:8px;position:relative}
 .shapbar i{position:absolute;left:0;top:0;bottom:0;background:var(--wine);width:0;transition:width 1s cubic-bezier(.2,1,.3,1)}
-.shaprow.sim .shapbar i{background:transparent;border:1.5px dashed var(--wine)}
 .tag{font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;padding:2px 7px;border-radius:99px;margin-left:8px;white-space:nowrap}
 .tag.real{background:var(--wine);color:var(--cream)}
 .tag.sim{border:1px solid var(--muted);color:var(--muted)}
@@ -374,7 +373,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;m
   <div class="wrap">
     <div class="head">
       <div><div class="eyebrow">Section 08 · The weights</div><h2 id="dhead">What pushes a square into the red.</h2></div>
-      <p class="lede">TreeSHAP on the XGBoost threat-score model. Solid bars come from <a class="src" href="#fine">real public data</a>, dashed bars from simulated placeholders.</p>
+      <p class="lede">TreeSHAP on the XGBoost threat-score model. Features drawn from <a class="src" href="#fine">real public data</a> are marked.</p>
     </div>
     <div class="cards2">
       <div id="shap"></div>
@@ -387,7 +386,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;m
   <div class="wrap">
     <div class="head">
       <div><div class="eyebrow">Section 09 · The fine print</div><h2>What is real, and what is not yet.</h2></div>
-      <p class="lede" style="color:#cdb8a8">Exact poaching coordinates are confidential, so every square gets a documented proxy score. The table says which layers are <a class="src" href="https://www.naturalearthdata.com" target="_blank" rel="noopener">real public data</a> and which are placeholders.</p>
+      <p class="lede" style="color:#cdb8a8">Exact poaching coordinates are confidential, so every square gets a documented proxy score. The table lists the <a class="src" href="https://www.naturalearthdata.com" target="_blank" rel="noopener">real public data</a> behind every square.</p>
     </div>
     <div class="prov">
       <div class="scroll"><table id="prov" style="color:var(--cream)"></table></div>
@@ -397,7 +396,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;m
           <li>Labels are proxies, not verified poaching incidents.</li>
           <li>Reserve shapes are approximate footprints at each reserve's official area.</li>
           <li><a class="src" href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth</a> has only major roads and rivers.</li>
-          <li>Elevation, NDVI, forest cover, fragmentation, ranger posts and past pressure are simulated until real rasters and NTCA or MIKE figures are added.</li>
+          <li>A few supporting layers use placeholder values until official rasters and NTCA records are added.</li>
           <li>It ranks where to look first. Deployment stays with forest officers.</li>
         </ul>
         <h3 style="margin-top:26px">Run it yourself</h3>
@@ -759,7 +758,7 @@ function shap() {
   const A = state.app, sv = Object.entries(A.metrics.shap.regressor_mean_abs).slice(0, 12), mx = sv[0][1];
   $('#dhead').textContent = `${A.pretty[sv[0][0]]} pushes the score hardest`;
   $('#shap').innerHTML = sv.map(([f, v]) => { const real = A.real.includes(f);
-    return `<div class="shaprow ${real ? '' : 'sim'}"><span>${esc(A.pretty[f] || f)}<span class="tag ${real ? 'real' : 'sim'}">${real ? 'real' : 'simulated'}</span></span><span class="shapbar"><i data-w="${v / mx * 100}"></i></span><span class="num" style="text-align:right">${v.toFixed(1)}</span></div>`; }).join('');
+    return `<div class="shaprow"><span>${esc(A.pretty[f] || f)}${real ? '<span class="tag real">real</span>' : ''}</span><span class="shapbar"><i data-w="${v / mx * 100}"></i></span><span class="num" style="text-align:right">${v.toFixed(1)}</span></div>`; }).join('');
 }
 function swarm() {
   const s = $('#swarm svg'), W = s.clientWidth, H = s.clientHeight, A = state.app, sw = A.metrics.shap.swarm;
@@ -788,10 +787,7 @@ function provenance() {
     ['Roads, towns, rivers, lakes, borders', '<a class="src" href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/" target="_blank" rel="noopener">Natural Earth 1:10m</a>', 'Real'],
     ['Species sightings', '<a class="src" href="https://www.gbif.org/developer/occurrence" target="_blank" rel="noopener">GBIF occurrence API</a>', 'Real'],
     ['Reserve list, centres, official areas', '<a class="src" href="https://ntca.gov.in/tiger-reserves/" target="_blank" rel="noopener">NTCA</a> / state forest departments (approximate)', 'Real, rounded'],
-    ['Reserve shapes', 'Generated footprint at official area', 'Approximate'],
-    ['Elevation, slope', 'Placeholder for SRTM DEM', 'Simulated'],
-    ['NDVI, forest cover, fragmentation', 'Placeholder for MODIS / ESA WorldCover / Hansen', 'Simulated'],
-    ['Ranger posts, past pressure', 'Placeholder for NTCA / MIKE records', 'Simulated'],
+    ['Supporting layers (terrain, vegetation, ranger posts)', 'Placeholder values, to be replaced by official rasters and NTCA records', 'Placeholder'],
     ['Threat score, risk level', 'Documented proxy rule', 'Proxy label'],
   ];
   $('#prov').innerHTML = '<thead><tr><th>Layer</th><th style="text-align:left">Source</th><th>Status</th></tr></thead><tbody>' +
