@@ -2,7 +2,7 @@
 
 **Live site: https://bagh-poaching-atlas.vercel.app**
 
-Contributors: [Shefali Sharma](https://github.com/shefali1702), [Bhavyam Misra](https://github.com/bhavyammisra)
+Contributors:  [Bhavyam Misra](https://github.com/bhavyammisra), [Shefali Sharma](https://github.com/shefali1702)
 
 Predicts poaching risk for every 1 km² cell of **54 Indian tiger, elephant and rhino reserves**, so forest
 departments can send limited patrol teams where they are needed most. Built by Shefali Sharma and Bhavyam Misra.
@@ -82,10 +82,7 @@ Interactive docs at http://localhost:8000/docs.
 | Ranger posts, past pressure | Placeholders for NTCA / MIKE | Simulated |
 | Threat score, risk level | Documented proxy rule (reports/label_rule.md) | Proxy label |
 
-**Say this clearly in the report and viva:** the labels are proxies, not verified poaching incidents,
-because exact incident locations are confidential. Several features are simulated placeholders, each one named
-above, with the real dataset it stands in for. The pipeline is built so each placeholder can be swapped for the
-real raster without changing the model code.
+ 
 
 ## Rigour points
 
